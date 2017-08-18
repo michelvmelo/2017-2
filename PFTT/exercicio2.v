@@ -1,26 +1,26 @@
-(** 116297 - Tópicos Avançados em Computadores - Turma B **)
-(** Provas Formais: Uma Introdução à Teoria de Tipos     **)
-(** Prof. Flávio L. C. de Moura                          **)
+(** 116297 - T\u00f3picos Avan\u00e7ados em Computadores - Turma B **)
+(** Provas Formais: Uma Introdu\u00e7\u00e3o \u00e0 Teoria de Tipos     **)
+(** Prof. Fl\u00e1vio L. C. de Moura                          **)
 (** Email: contato@flaviomoura.mat.br                    **)
 (** Homepage: http://flaviomoura.mat.br                  **)
 
 (** Dicas:
 
-    intro: introdução da implicação
-    exact H: a hipótese H corresponde exatamente ao que se quer provar.
-    assumption: o que se quer provar é igual a alguma das hipóteses.
+    intro: introdu\u00e7\u00e3o da implica\u00e7\u00e3o
+    exact H: a hip\u00f3tese H corresponde exatamente ao que se quer provar.
+    assumption: o que se quer provar \u00e9 igual a alguma das hip\u00f3teses.
     apply H: o tipo alvo de H coincide com o que se quer provar. 
-    inversion H: aplica o(s) construtor(es) que permitem gerar a hipótese H. Se nenhum construtor pode ser aplicado, a prova é concluída. Também permite concluir que a partir do absurdo (False) se prova qualquer coisa.
-    left: seleciona o lado esquerdo de uma disjunção.
-    right: seleciona o lado direito de uma disjunção.
-    unfold H: substitui H por sua definição.
-    assert (F): adiciona a fórmula F no contexto uma vez que a mesma seja provada. Consiste em adicionar F como um lema para a prova atual.
-    destruct H: faz análise de casos em H
-    inversion H: gera as condições necessárias para a construção de H
+    inversion H: aplica o(s) construtor(es) que permitem gerar a hip\u00f3tese H. Se nenhum construtor pode ser aplicado, a prova \u00e9 conclu\u00edda. Tamb\u00e9m permite concluir que a partir do absurdo (False) se prova qualquer coisa.
+    left: seleciona o lado esquerdo de uma disjun\u00e7\u00e3o.
+    right: seleciona o lado direito de uma disjun\u00e7\u00e3o.
+    unfold H: substitui H por sua defini\u00e7\u00e3o.
+    assert (F): adiciona a f\u00f3rmula F no contexto uma vez que a mesma seja provada. Consiste em adicionar F como um lema para a prova atual.
+    destruct H: faz an\u00e1lise de casos em H
+    inversion H: gera as condi\u00e7\u00f5es necess\u00e1rias para a constru\u00e7\u00e3o de H
 *)
 
 (**
-   Nos exercícios abaixos remova o comando 'Admitted' e construa uma prova para as proposições apresentadas.
+   Nos exerc\u00edcios abaixos remova o comando 'Admitted' e construa uma prova para as proposi\u00e7\u00f5es apresentadas.
  *)
 
 Section Exercicios.
@@ -140,21 +140,18 @@ Lemma exercicio14: NNeg -> Peirce.
 Proof.
   intro.
   intro.
+  apply H.
+  intro.
+  case H1.
   apply H0.
   intro.
-  
-    
-    
-    
-    
-  
-  
-  
-  
-Admitted.
+  contradiction.
+Qed.
 
 Lemma exercicio15: (A -> ~A) -> A -> B.
 Proof.
-Admitted.
+  intros.
+  destruct H; assumption.
+Qed.
 
 End Exercicios.
